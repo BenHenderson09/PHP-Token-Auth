@@ -1,6 +1,6 @@
 <?php
-    require_once "C:/xampp/project_configuration/token_auth/config.php";
-    require_once 'C:/xampp/htdocs/PHP/Learning/TokenAuth/util/auth.php';
+    require_once "<your path to config.php>";
+    require_once '<your path>/util/auth.php';
 
     session_start();
 
