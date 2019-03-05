@@ -10,7 +10,7 @@ This application was developed to offer an educational quick-start into how toke
 
 ## Usage
 To use the application, a few things must be set up. Firstly, a configuration file is require to create a PDO object that connects
-to the database,
+to the database:
 
 ### config.php
 ```php
@@ -20,7 +20,7 @@ DEFINE('DB_HOST', 'localhost');
 DEFINE('DB_NAME', 'token_auth');
 
 DEFINE('DB_USER', '<your user>');
-DEFINE('DB_PASS', 'your pass');
+DEFINE('DB_PASS', '<your pass>');
 
 try{
 	$dbh = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';', DB_USER, DB_PASS);
