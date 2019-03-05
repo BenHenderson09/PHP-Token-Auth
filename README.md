@@ -40,15 +40,35 @@ After this file is created, simply insert the directory path into `includes/head
 ## Database Structure
 The database structure is fairly simple. The database is named `token_auth` and contains a two tables named `users` and `auth_tokens`.
 
-The `users` table is constructed of the following columns:
+### The `users` table is constructed of the following columns:
 - username varchar(40)
 - email varchar(40)
 - fullname varchar(60)
 - password varchar(255)
 - id int(10) unsigned (auto incremented primary key)
 
-The `auth_tokens` table has the following structure:
+```SQL
+CREATE TABLE users(
+    username VARCHAR(40) NOT NULL,
+    email VARCHAR(40) NOT NULL,
+    fullname VARCHAR(60) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+);
+```
+
+### The `auth_tokens` table has the following structure:
 - token varchar(255)
 - selector varchar(255)
 - user_id int(10) unsigned (foreign key to users table)
-- id int(10) unsigned (auto incrememnted primary key)
+- id int(10) unsigned (auto incremented primary key)
+
+```SQL
+CREATE TABLE auth_tokens(
+    token VARCHAR(255) NOT NULL,
+    selector VARCHAR(255) NOT NULL,
+    user_id INT(10) UNSIGNED,
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
+```
