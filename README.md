@@ -1,4 +1,4 @@
-# PHPTokenAuth
+# PHP-Token-Auth
 This application was developed to offer an educational quick-start into how token authentication can be used for persistent login.
 
 ## Application details
